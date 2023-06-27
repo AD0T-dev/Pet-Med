@@ -1,0 +1,181 @@
+<html lang="en">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Pet-Med</title>
+        <!-- Bootstrap  -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <!-- Bootstrap Icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="style.css">
+
+
+
+    </head>
+
+    <body class="green-bg-gradient ">
+
+
+        <div class="modal fade" id="submit" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="submit" aria-hidden="true">
+            <div class="modal-dialog m-4 mx-sm-auto ">
+                <div class="modal-content upper-bg rounded-4">
+                    <div class="modal-body text-light text-center mt-3 mb-3 ">
+                        Your information has been recieved by us and once we verify it, you account will be changed into
+                        a vet account.
+                    </div>
+
+                    <a href="vets.html"
+                        class="button primary-bg text-decoration-none text-dark mx-auto mb-4 rounded-3">Close</a>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container pt-3">
+
+            <div class="row justify-content-center align-items-center pt-3">
+
+                <!-- form -->
+                <div class="card col-10 shadow-lg p-3 m-5 translucent-white rounded-4">
+                    <form>
+                        <div class="container">
+
+                            <h1 class="primary-text mt-4 text-dark text-center">Enter Vet Information</h1>
+
+
+                            <div class="row align-items-center justify-content-center pt-4">
+
+
+                                <!-- row1 -->
+
+                                <div class="col-12 col-md-6 col-lg-4  form-group">
+                                    <lable class="form-label" for="fname">First Name</lable>
+                                    <input type="text" id="fname" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4  form-group">
+                                    <lable class="form-label" for="mname">Middle Name</lable>
+                                    <input type="text" id="mname" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-4  form-group">
+                                    <lable class="form-label" for="lname">Last Name</lable>
+                                    <input type="text" id="lname" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+
+                                <!-- row2 -->
+
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="experience">Experience (Yrs)</lable>
+                                    <input type="number" id="experience" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="dob">DOB</lable>
+                                    <input type="date" id="dob" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="age">Age</lable>
+                                    <input type="number" id="age" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="gender">Gender</lable>
+                                    <input type="number" id="gender" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="speciality">Speciality</lable>
+                                    <input type="text" id="speciality" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+                                <!-- row3 -->
+
+
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="timeslot"> Time slot (From)</lable>
+                                    <input type="time" id="timeslot" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+                                <div class="col-6 col-md-4 col-lg-3 form-group">
+                                    <lable class="form-label" for="timeslot"> Time slot (To)</lable>
+                                    <input type="time" id="timeslot" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+                                <div class="col-6 col-md-4 col-xl-3 form-group">
+                                    <lable class="form-label" for="timeslot"> Qualifications</lable>
+                                    <input type="text" id="timeslot" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+
+
+                                <!-- row4 -->
+
+                                <div class="col-6 col-md-4 col-lg-4 form-group">
+                                    <lable class="form-label" for="city">City</lable>
+                                    <input type="text" id="city" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-6 col-md-4 col-lg-4 form-group">
+                                    <lable class="form-label" for="state">State</lable>
+                                    <input type="text" id="state" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-4 form-group">
+                                    <lable class="form-label" for="country">Country</lable>
+                                    <input type="text" id="country" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+                                <!-- row -->
+
+                                <div class="col-12 col-md-8 col-lg-10 form-group">
+                                    <lable class="form-label" for="photo">Photo</lable>
+                                    <input type="file" id="photo" class="form-control mt-2 mb-4 shadow-sm">
+                                </div>
+
+
+
+
+
+                                <div class="row">
+                                    <a href=""
+                                        class="button col-8 col-md-4 col-lg-2 fs-5 text-dark rounded-3 my-auto mx-auto mt-4 px-4 mb-3 border-0 text-center"
+                                        data-bs-toggle="modal" data-bs-target="#submit">Submit</a>
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- Bootstrap Javascript -->
+
+        <script src=" https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+            integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+            integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+            crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

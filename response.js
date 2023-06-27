@@ -1,0 +1,22 @@
+const responseObj = {
+  hello: "Hi! How may I help you today?",
+  hey: "Hello there! How may I help you?",
+  hi: "Hello! How may I help you?",
+  'i have a problem': "What's the problem?",
+  'i have a problem': "What's the problem?",
+  'how do i sign in?': "Click on the account icon and then click on sign in option.",
+  'how do i sign up?': "Click on the account icon and then then please fill the details.",
+  'ok thank you': "Welcome!",
+  'thanks': "No problem!",
+  'how does it work?': "Please go to the FAQ section.",
+  'are you a robot?': "Yes, I am a artificial chat bot, designed by the DPSGFBD students to answer and help people!",
+  'how are you?': "I am fine, thank you!",
+  'you are annoying': "Sorry if I cannot help you.",
+  'who made you?': "I was designed by the DPSGFBD students.",
+  'how to appoint a doctor?': "Go to vets, then choose a vet of your choice by 'click me' and click on hire me. Book an appointment and then you will receive an confirmation on your email within 1-2 days conforming the appointment.",
+  'how to cancel an appointment?': "Sorry we currently don't have an option to cancel an appointment and thus, no refund will be made.",
+  'how to check notifications?': "Click on the notification icon on the topmost right corner on the dashboard after signing in.",
+
+  today: new Date().toDateString(),
+  time: new Date().toLocaleTimeString(),
+};

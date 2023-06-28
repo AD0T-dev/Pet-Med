@@ -23,7 +23,9 @@ function signUp() {
 
     auth.createUserWithEmailAndPassword(email.value, password.value)
         .then(function (working) {
-            alert("Account created successfully"); if (if_user_is_vet.checked == true) { window.location = "vetinfo.html" } else { window.location = "vets.html"; }
+            alert("Account created successfully"); 
+            if (if_user_is_vet.checked == true) { window.location = "vetinfo.html" } 
+            else { window.location = "dashboard.html"; }
         })
 
         .catch(function (error) {
@@ -41,10 +43,10 @@ function signUp() {
             // // email.value = "";
             // // password.value = "";
             // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
-            // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
+            // else {window.location="dashboard.html";}// If checkbox is not checked then redirect to dashboard.html
         });
     // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
-    // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
+    // else {window.location="dashboard.html";}// If checkbox is not checked then redirect to dashboard.html
 }
 
 
@@ -68,7 +70,7 @@ function signIn() {
     );
     auth.onAuthStateChanged(user => {
         if (user) {
-            window.location = 'vets.html'; //After successful login, user will be redirected to vets.html
+            window.location = 'dashboard.html'; //After successful login, user will be redirected to dashboard.html
         }
     });
 }
@@ -93,7 +95,7 @@ firebase.auth().onAuthStateChanged((user) => {
         if (location.href.split("/").slice(-1) == "signin.html" || location.href.split("/").slice(-1) == "signup.html") {
             // console.log(window.location.href)
             // console.log("redirect")
-            window.location = 'vets.html';
+            window.location = 'dashboard.html';
             alert("Signed in with: " + email);
         }
 

@@ -30,15 +30,20 @@
             </div>
 
 
-            <div class="pb-3 pt-3 pe-3 me-1 ps-3 icon">
-                <a href="#" class="text-decoration-none" onclick="signOut()">
-                    <i class=" bi bi-power text-secondary fs-1"></i>
+            <div class="pb-3 pt-3 pe-3 me-1 ps-3 icon dropdown">
+                <a href="#" class="text-decoration-none" role="button" id="profile-button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <i class=" bi bi-person-circle text-secondary fs-1"></i>
                 </a>
+
+                <ul class="dropdown-menu" aria-labelledby="profile-button">
+                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item" href="signin.html" onclick="signOut()">Sign Out</a></li>
+                </ul>
+
             </div>
 
 
         </div>
-
 
         <div class="d-flex">
             <!-- sidebar -->
@@ -58,7 +63,7 @@
                         </div>
                     </a>
 
-                    <a href="vets.html" class="text-decoration-none">
+                    <a href="dashboard.html" class="text-decoration-none">
                         <div class="sidebar-link ps-4 pt-3 pb-3">
 
                             <i class="fa fa-paw text-secondary fs-4 d-none d-lg-inline "></i>

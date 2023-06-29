@@ -59,11 +59,11 @@ function signIn() {
 
         let errorCode = error.code;
 
-        // if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
-        // else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
+        if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
+        else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
 
-        // console.log(error.code);
-        // alert("An error occured, please try again");
+        console.log(error.code);
+        alert("An error occured, please try again");
         email.value = "";
         password.value = "";
     }

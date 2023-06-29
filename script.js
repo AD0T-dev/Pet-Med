@@ -25,7 +25,7 @@ function signUp() {
         .then(function (working) {
             alert("Account created successfully"); 
             if (if_user_is_vet.checked == true) { window.location = "vetinfo.html" } 
-            else { window.location = "dashboard.html"; }
+            else { window.location = "vets.html"; }
         })
 
         .catch(function (error) {
@@ -43,10 +43,10 @@ function signUp() {
             // // email.value = "";
             // // password.value = "";
             // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
-            // else {window.location="dashboard.html";}// If checkbox is not checked then redirect to dashboard.html
+            // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
         });
     // if (if_user_is_vet.checked == true){window.location="vetinfo.html";}// If checkbox is checked then redirect to vetinfo.html
-    // else {window.location="dashboard.html";}// If checkbox is not checked then redirect to dashboard.html
+    // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
 }
 
 
@@ -70,7 +70,7 @@ function signIn() {
     );
     auth.onAuthStateChanged(user => {
         if (user) {
-            window.location = 'dashboard.html'; //After successful login, user will be redirected to dashboard.html
+            window.location = 'vets.html'; //After successful login, user will be redirected to vets.html
         }
     });
 }
@@ -96,7 +96,7 @@ firebase.auth().onAuthStateChanged((user) => {
         if (location.href.split("/").slice(-1) == "signin.html" || location.href.split("/").slice(-1) == "signup.html") {
             // console.log(window.location.href)
             // console.log("redirect")
-            window.location = 'dashboard.html';
+            window.location = 'vets.html';
             alert("Signed in with: " + email);
         }
 

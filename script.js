@@ -59,8 +59,8 @@ function signIn() {
 
         let errorCode = error.code;
 
-        if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
-        else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
+        // if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
+        // else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
 
         // console.log(error.code);
         // alert("An error occured, please try again");
@@ -82,6 +82,7 @@ function signIn() {
 function signOut() {
     auth.signOut();
     alert("Signed out successfully");
+    window.location = "signin.html"
 }
 
 //active user to homepage
@@ -103,3 +104,9 @@ firebase.auth().onAuthStateChanged((user) => {
         console.log("No Active User");
     }
 })
+
+// Initialize the dropdown
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+  return new bootstrap.Dropdown(dropdownToggleEl);
+});

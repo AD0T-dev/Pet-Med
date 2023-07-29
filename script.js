@@ -14,7 +14,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
-// const user = auth.currentUser;
 
 //signup function
 function signUp() {
@@ -73,42 +72,49 @@ function signIn() {
     });
 }
 
+
+
 //signOut
+
 function signOut() {
     auth.signOut();
-    alert("Signed out successfully");
+    let logged_state_icon = document.getElementById("logged")
+    logged_state_icon.style.display = "none"
     window.location = "signin.html"
+}
+
+function check_logged_state(){
+    firebase.auth().onAuthStateChanged((user) => {
+
+        if (user) {
+
+                let logged_state_icon = document.getElementById("not-logged");
+                logged_state_icon.style.display = "none";
+                console.log("executed");
+            }
+    
+         else {
+            let logged_state_icon = document.getElementById("logged")
+            logged_state_icon.style.display = "none"
+            console.log("No Active User");
+        }
+    })
+    
 }
 
 //active user to homepage
 firebase.auth().onAuthStateChanged((user) => {
+
     if (user) {
+
+        let email = user.email;
         // console.log("outside redired")
-        if (location.href.split("/").slice(-1) == ("signin#","signin#?","signin.html","signin?") || location.href.split("/").slice(-1) == ("signup#","signup#?","signup","signup?")) {
+        if (location.href.split("/").slice(-1) == ("signin.html#","signin.html#?","signin.html") || location.href.split("/").slice(-1) == ("signup.html#","signup.html#?","signup.html")) {
             // console.log(window.location.href)
             // console.log("redirect")
             window.location = 'vets.html';
         }
-        else if (location.href.split("/").slice(-1) == ("index")||location.href == "") {
-            let not_logged_button = document.getElementById("not-logged");
-            not_logged_button.classList.add("hiden");
-            let logged_button = document.getElementById("logged");
-            logged_button.classList.remove("hiden");
-        }
-    }
-    else {
-        if (location.href.split("/").slice(-1) == ("signin#","signin#?","signin.html","signin?") || location.href.split("/").slice(-1) == ("signup#","signup#?","signup","signup?")) {
-            // Damn
-        } 
-        else if (location.href.split("/").slice(-1) == ("index")||location.href == "") {
-            // console.log("Not-logged");
-            let not_logged_button = document.getElementById("not-logged");
-            not_logged_button.classList.remove("hiden");
-            let logged_button = document.getElementById("logged");
-            logged_button.classList.add("hiden");
-        }  
-        else{
-            window.location = "signin.html";
-            }   
+    } else {
+        console.log("No Active User");
     }
 })

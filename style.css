@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
+
 * {
     font-family: 'Comfortaa', cursive;
 }
@@ -142,17 +143,19 @@ input {
     scale: 1.1;
 }
 
-.alert{
-    z-index: 1;
-}
- 
-.hiden{
-    display: none;
+
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Poppins:wght@200;300&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
     background: #4b5c66;
-}s
+}
 
 .chat-container {
     height: 420px;

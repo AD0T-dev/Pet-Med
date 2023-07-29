@@ -59,10 +59,13 @@ function signIn() {
 
         let errorCode = error.code;
 
-        if (errorCode == "auth/wrong-password") {
-           console.log("auth/invalid-password") }
-        else if (errorCode == "auth/invalid-email") { 
-            console.log("auth/invalid-email")}
+        if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
+        else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
+
+        console.log(error.code);
+        alert("An error occured, please try again");
+        email.value = "";
+        password.value = "";
     }
     );
     auth.onAuthStateChanged(user => {
@@ -78,43 +81,32 @@ function signIn() {
 
 function signOut() {
     auth.signOut();
-    let logged_state_icon = document.getElementById("logged")
-    logged_state_icon.style.display = "none"
+    alert("Signed out successfully");
     window.location = "signin.html"
-}
-
-function check_logged_state(){
-    firebase.auth().onAuthStateChanged((user) => {
-
-        if (user) {
-
-                let logged_state_icon = document.getElementById("not-logged");
-                logged_state_icon.style.display = "none";
-                console.log("executed");
-            }
-    
-         else {
-            let logged_state_icon = document.getElementById("logged")
-            logged_state_icon.style.display = "none"
-            console.log("No Active User");
-        }
-    })
-    
 }
 
 //active user to homepage
 firebase.auth().onAuthStateChanged((user) => {
 
+
     if (user) {
 
         let email = user.email;
         // console.log("outside redired")
-        if (location.href.split("/").slice(-1) == ("signin.html#","signin.html#?","signin.html") || location.href.split("/").slice(-1) == ("signup.html#","signup.html#?","signup.html")) {
+        if (location.href.split("/").slice(-1) == "signin.html" || location.href.split("/").slice(-1) == "signup.html") {
             // console.log(window.location.href)
             // console.log("redirect")
             window.location = 'vets.html';
+            alert("Signed in with: " + email);
         }
+
     } else {
         console.log("No Active User");
     }
 })
+
+// Initialize the dropdown
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+  return new bootstrap.Dropdown(dropdownToggleEl);
+});

@@ -13,7 +13,7 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
-const user = auth.currentUser;
+const user = auth.currentUser();
 
 
 //signOut

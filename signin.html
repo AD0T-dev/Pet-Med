@@ -36,25 +36,25 @@
 
                         <hr class="my-4 mb-5 mx-auto" style="width: 80%;">
 
-                        <form class="needs-validation" novalidate>
-
-                            <div class="form-floating mb-3 " id="floatingInput-master">
-                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                        <form>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control border-0 required" id="floatingInput"
+                                    placeholder="name@example.com">
                                 <label for="floatingInput">Email</label>
                             </div>
-                            
-                            <div class="form-floating mb-2" id="floatingPassword-master">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+
+
+                            <div class="form-floating mb-2">
+                                <input type="password" class="form-control required" id="floatingPassword"
+                                    placeholder="Password">
                                 <label for="floatingPassword">Password</label>
                             </div>
-
-                            <br>  
+                            <br>
                             <br>
                             <div class="row mb-4">
-                                <button class="btn button text-light col-8 border-0 mx-auto mb-3"
-                                    id="sign-up-button" style="background-color: #7738bf;" type="submit" onclick="signIn()">
-                                    Sign-In
-                                </button>
+                                <a href="#" class="btn button text-light col-8 border-0 mx-auto mb-3"
+                                    id="sign-up-button" onclick="signIn()" style="background-color: #7738bf;">
+                                    Sign-In</a>
                             </div>
 
                             <p class="text-center mb-4 fw-bold fs-6 mt-4">New around here? <br><a href="signup.html"
@@ -65,33 +65,13 @@
                     </div>
                 </div>
 
+
+
+
             </div>
         </div>
 
-        <!-- Form Validation -->
-        <script>
 
-        (function () {
-        'use strict'
-
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-        var forms = document.querySelectorAll('.needs-validation')
-
-        // Loop over them and prevent submission
-        Array.prototype.slice.call(forms)
-            .forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-            })
-        })()
-
-        </script>
 
         <!-- Firebase Connection -->
         <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
@@ -100,7 +80,7 @@
         <!-- Application Script -->
         <script src="script.js"></script>
 
-        <!-- Bootstrap Javascript -->
+         <!-- Bootstrap Javascript -->
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 

@@ -96,7 +96,7 @@ firebase.auth().onAuthStateChanged((user) => {
             // console.log("redirect")
             window.location = 'vets.html';
         }
-        else if (location.href.split("/").slice(-1) == ("index.html","")) {
+        else if (location.href.split("/").slice(-1) == ("index.html") || location.href.split("/").slice(-1) == "") {
             let not_logged_button = document.getElementById("not-logged");
             not_logged_button.classList.add("hiden");
             let logged_button = document.getElementById("logged");
@@ -108,7 +108,7 @@ firebase.auth().onAuthStateChanged((user) => {
             // Damn
             // console.log("Damn");
         } 
-        else if (location.href.split("/").slice(-1) == ("index.html","")) {
+        else if (location.href.split("/").slice(-1) == ("index.html") || location.href.split("/").slice(-1) == "") {
             let not_logged_button = document.getElementById("not-logged");
             not_logged_button.classList.remove("hiden");
             let logged_button = document.getElementById("logged");

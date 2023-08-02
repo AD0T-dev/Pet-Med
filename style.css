@@ -120,17 +120,6 @@ input {
     text-decoration: none;
 }
 
-.button-404 {
-    background-color: #53DD6C;
-    padding: 0.7em;
-    text-decoration: none;
-    color:#30303a;
-}
-.button-404:hover{
-    scale:1;
-    color: #30303a;
-}
-
 .button:hover {
     scale: 1.1;
     background-color: #53DD6C;
@@ -264,3 +253,4 @@ a.link_customized {
 .icon:hover {
     background-color: transparent;
   }
+  

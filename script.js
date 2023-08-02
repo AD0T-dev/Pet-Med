@@ -14,6 +14,11 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const auth = firebase.auth();
+const user = auth.currentUser;
+
+//Function to generate alerts 
+function generate_alert() {
+}
 
 //signup function
 function signUp() {
@@ -50,7 +55,6 @@ function signUp() {
 }
 
 
-
 //signIN function
 function signIn() {
     let email = document.getElementById("floatingInput");
@@ -75,38 +79,40 @@ function signIn() {
     });
 }
 
-
-
 //signOut
 
 function signOut() {
     auth.signOut();
-    alert("Signed out successfully");
     window.location = "signin.html"
 }
 
+
 //active user to homepage
 firebase.auth().onAuthStateChanged((user) => {
-
-
     if (user) {
-
-        let email = user.email;
         // console.log("outside redired")
-        if (location.href.split("/").slice(-1) == "signin.html" || location.href.split("/").slice(-1) == "signup.html") {
+        if (location.href.split("/").slice(-1) == ("signin.html#","signin.html#?","signin.html","signin.html?") || location.href.split("/").slice(-1) == ("signup.html#","signup.html#?","signup.html","signup.html?")) {
             // console.log(window.location.href)
             // console.log("redirect")
             window.location = 'vets.html';
-            alert("Signed in with: " + email);
         }
-
-    } else {
-        console.log("No Active User");
+        else if (location.href.split("/").slice(-1) == ("index.html","")) {
+            let not_logged_button = document.getElementById("not-logged");
+            not_logged_button.classList.add("hiden");
+            let logged_button = document.getElementById("logged");
+            logged_button.classList.remove("hiden");
+        }
+    }
+    else {
+        if (location.href.split("/").slice(-1) == ("signin.html#","signin.html#?","signin.html","signin.html?") || location.href.split("/").slice(-1) == ("signup.html#","signup.html#?","signup.html","signup.html?")) {
+            // Damn
+            // console.log("Damn");
+        } 
+        else if (location.href.split("/").slice(-1) == ("index.html","")) {
+            let not_logged_button = document.getElementById("not-logged");
+            not_logged_button.classList.remove("hiden");
+            let logged_button = document.getElementById("logged");
+            logged_button.classList.add("hiden");
+        }  
     }
 })
-
-// Initialize the dropdown
-var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'));
-var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-  return new bootstrap.Dropdown(dropdownToggleEl);
-});

@@ -17,7 +17,9 @@ const auth = firebase.auth();
 const user = auth.currentUser;
 
 //Function to generate alerts 
-function generate_alert() {
+function generate_alert_error(title,description) {
+    let document_area = document.getElementById("content-area")
+    document_area.insertAdjacentHTML("afterbegin",`<div class=\"alert alert-warning alert-dismissible fade show\" role=\"alert\"><strong>${title}</strong> ${description}<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>`)
 }
 
 //signup function
@@ -36,11 +38,11 @@ function signUp() {
         .catch(function (error) {
 
             let errorCode = error.code;
-            if (errorCode == "auth/weak-password") { alert("The password is too weak and the minimum size of password is 6 charecters"); }
-            else if (errorCode == "auth/email-already-in-use") { alert("The email is already in use"); email.value = ""; password.value = ""; }
-            else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
-            else if (errorCode == "auth/operation-not-allowed") { alert("The email is not allowed"); email.value = ""; password.value = ""; }
-            else { alert("Please try again"); email.value = ""; password.value = ""; };
+            if (errorCode == "auth/weak-password") { generate_alert_error("Weak Password","The password is too weak and the minimum size of password is 6 charecters"); }
+            else if (errorCode == "auth/email-already-in-use") { generate_alert_error("Email alreasy used","The email is already in use"); email.value = ""; password.value = ""; }
+            else if (errorCode == "auth/invalid-email") { generate_alert_error("Invalid Email","The email id is invalid"); email.value = ""; password.value = ""; }
+            else if (errorCode == "auth/operation-not-allowed") { generate_alert_error("Email not","The email is not allowed"); email.value = ""; password.value = ""; }
+            else { generate_alert_error("Please try again",""); email.value = ""; password.value = ""; };
 
             //Debug functions
             // console.log(error.Message);
@@ -54,7 +56,6 @@ function signUp() {
     // else {window.location="vets.html";}// If checkbox is not checked then redirect to vets.html
 }
 
-
 //signIN function
 function signIn() {
     let email = document.getElementById("floatingInput");
@@ -63,11 +64,12 @@ function signIn() {
 
         let errorCode = error.code;
 
-        if (errorCode == "auth/wrong-password") { alert("The password used for the email is incorrect"); email.value = ""; password.value = ""; }
-        else if (errorCode == "auth/invalid-email") { alert("The email is invalid"); email.value = ""; password.value = ""; }
-
-        console.log(error.code);
-        alert("An error occured, please try again");
+        if (errorCode == "auth/wrong-password") { generate_alert_error("Wrong Password","The password used for the email is incorrect"); email.value = ""; password.value = ""; }
+        else if (errorCode == "auth/invalid-email") { generate_alert_error("Invalid Email","The email is invalid"); email.value = ""; password.value = ""; }
+        else{
+        // console.log(error.code);
+        generate_alert_error("An error occured, please try again","");
+        }
         email.value = "";
         password.value = "";
     }

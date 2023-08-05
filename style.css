@@ -120,6 +120,15 @@ input {
     text-decoration: none;
 }
 
+.alert{
+    z-index: 100;
+    position: relative;
+}
+
+.alert-container{
+    position:absolute;
+}
+
 .button-404 {
     background-color: #53DD6C;
     padding: 0.7em;
